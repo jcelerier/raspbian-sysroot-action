@@ -4,8 +4,8 @@ set(CMAKE_C_COMPILER "clang-15")
 set(CMAKE_CXX_COMPILER "clang++-15")
 set(CMAKE_LIBRARY_ARCHITECTURE "@TARGET_TRIPLE@")
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --target=@TARGET_TRIPLE@ -Wl,-rpath-link,${CMAKE_SYSROOT}/opt/vc/lib  -march=armv8-a -mfpu=neon-fp-armv8 -mcpu=cortex-a53 -Ofast ")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --target=@TARGET_TRIPLE@ -Wl,-rpath-link,${CMAKE_SYSROOT}/opt/vc/lib  -march=armv8-a -mfpu=neon-fp-armv8 -mcpu=cortex-a53 -Ofast ")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --target=@TARGET_TRIPLE@ -Wl,-rpath-link,${CMAKE_SYSROOT}/opt/vc/lib  -march=armv8-a -mfpu=neon-fp-armv8 -mcpu=cortex-a53 -Ofast -L /opt/pi-sysroot/usr/lib/arm-linux-gnueabihf -L /usr/lib/arm-linux-gnueabihf")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --target=@TARGET_TRIPLE@ -Wl,-rpath-link,${CMAKE_SYSROOT}/opt/vc/lib  -march=armv8-a -mfpu=neon-fp-armv8 -mcpu=cortex-a53 -Ofast -L /opt/pi-sysroot/usr/lib/arm-linux-gnueabihf -L /usr/lib/arm-linux-gnueabihf")
 
 set(CMAKE_FIND_ROOT_PATH "${CMAKE_SYSROOT}")
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
