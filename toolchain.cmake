@@ -5,7 +5,7 @@ set(CMAKE_CXX_COMPILER "clang++-15")
 set(CMAKE_LIBRARY_ARCHITECTURE "@TARGET_TRIPLE@")
 
 set(_cxxflags " --target=@TARGET_TRIPLE@ -Wl,-rpath-link,${CMAKE_SYSROOT}/opt/vc/lib  -march=armv8-a -mfpu=neon-fp-armv8 -mcpu=cortex-a53 -Ofast ")
-set(_linkflags " ${_cxxflags} /opt/pi-sysroot/usr/lib/arm-linux-gnueabihf/libblas.so.3 /opt/pi-sysroot/usr/lib/arm-linux-gnueabihf/liblapacke.so.3 ")
+set(_linkflags " ${_cxxflags} /usr/lib/arm-linux-gnueabihf/libblas.so.3 /usr/lib/arm-linux-gnueabihf/liblapacke.so.3 ")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${_cxxflags} ")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${_cxxflags} ")
 
